@@ -1,0 +1,341 @@
+img {
+    max-width:100%;
+  }
+
+body {
+  font-family: Verdana;
+  background-image: url(water.gif);
+  background-size: cover;
+  margin:0;
+  padding:0;
+}
+
+.top .middle .bottom {
+  background-color: #0000b0;
+}
+
+.top {
+  grid-area:top; 
+}
+
+.middle {
+  grid-area:middle;
+}
+
+.bottom {
+  grid-area:bottom;
+}
+
+header, nav, main, footer, aside{
+   border-radius:5px;
+}
+
+header {
+    grid-area:header;
+    background:#3b3b3b;
+    text-align:center;
+}
+
+/*
+aside {
+    color:#0000b0;
+    font-size: 1.25em;
+    padding:10px 0;
+    background-color: #ffdd03;
+    grid-area: aside;
+}
+
+
+
+aside h2 {
+    color: #0000b0;
+}
+
+aside a {
+    color:#0000b0;
+}
+*/
+.top{
+  grid-area:top;
+}
+
+.middle {
+  grid-area:middle;
+}
+
+.bottom {
+  grid-area:bottom;
+}
+
+header h1 {
+     font-size:5vw;
+     color:#ffffff;
+     font-family:Impact;
+     text-shadow: 2px 2px 5px #444444;
+     margin: 0;
+}
+
+header h3 {
+    font-size:2vw;
+    color:#f1b50d;
+    margin:0;
+}
+nav {
+    grid-area:nav;
+    background:#226324;
+    }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+  max-height: 4cm;
+}
+
+li a:hover {
+  background-color: #111111;
+}
+
+li {
+  display: inline-block;
+}
+
+.first {
+  grid-area:first;
+  margin-left:0;
+}
+
+.second {
+  grid-area:second;
+}
+
+.third {
+  grid-area:third;
+}
+
+.fourth {
+  grid-area:fourth;
+}
+
+.fifth {
+  grid-area:fifth;
+}
+
+#navwrapper {
+  display:grid;
+  grid-template-areas:
+  "first second third fourth fifth sixth";
+  }
+main {
+    grid-area:main;
+    background:#A4C4FE;
+    color:#0000B0;
+    padding:5px;
+    }
+
+main h2 {
+    text-align:center;
+    margin:1%;
+}
+
+main p {
+    color:#000080;
+    padding:1% 2%;
+    font-size:1em;
+}
+
+main a {
+ color:navy;   
+}
+
+footer {
+    grid-area:footer;
+    background:#333333;
+    padding:5px;
+    text-align:center;
+    }
+
+footer p {
+     font-size:1em;
+     color:#ffffff;
+     margin:0;
+}
+
+/* grid-area:top; grid-area:middle; grid-area:bottom; */
+
+/*---------------------------Mobile Layout----------------------------*/
+.container1 { /*for later*/
+    display: grid;
+    grid-template-columns:auto;
+    grid-gap:.5em;
+    margin:1%;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "footer";
+      }
+
+.container2 { /*for index.html*/
+  display: grid;
+  grid-template-columns:auto;
+  grid-gap:.5em;
+  margin:1%;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+    }
+
+.container3 { /*for blog.html*/
+  display: grid;
+  grid-template-columns:100%;
+  grid-gap:.5em;
+  margin:1%;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "top"
+    "middle"
+    "bottom"
+    "footer";
+    }
+
+  
+  /*This stuff is for the hamburger menu*/
+  .toggleNav {
+      display:grid; /*This is what allows the hamburger icon and "Menu" to display*/
+      text-align:center;
+      font-size:1.5em;
+      font-weight:bold;
+      padding:10px;
+      }
+  
+  #flex-nav ul {
+      display: none; /*jQuery toggles the nav from to this class to the .open when clicked*/
+      text-align:center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      }
+   
+  #flex-nav ul.open { /*.open is the class that gets toggled when clicked (with help from the jQuery code)*/
+      display:grid;
+      }
+      
+  #flex-nav li {
+      padding-left:10px;
+      padding-top:10px;
+      }
+  
+  
+  /*-----------------------Tablet Media Query------------------------*/
+  @media only screen and (min-width: 480px)  {
+    .container1 { /*for index.html*/
+        grid-template-columns:auto 1fr;
+        grid-template-areas:
+          "header header"
+          "nav main"
+          "footer footer";
+          }
+  
+    .container2 { /*for index.html*/
+      display: grid;
+        grid-template-columns:auto 1fr;
+        grid-gap:.5em;
+        margin:1%;
+        grid-template-areas:
+             "header header"
+             "nav nav"
+             "main main"
+             "footer footer";
+    }
+
+    .container3 { /*for blog.html*/
+      display: grid;
+      grid-template-columns:100%;
+      grid-gap:.5em;
+      margin:1%;
+      grid-template-areas:
+        "header header"
+        "nav nav"
+        "main main"
+        "top top"
+        "middle middle"
+        "bottom bottom"
+        "footer footer";
+        }
+  
+  /* Below will change from hamburger menu to side navigation*/
+    
+  .toggleNav {
+      display: none; /*Makes the hamburger icon with the word "Menu" to disappear at this screen size*/
+    }
+    
+  #flex-nav ul {
+      display:grid;
+      text-align:left;
+    }
+  
+  #flex-nav li {
+      padding-left:10px;
+      padding-top:10px;
+    }
+  
+  }
+  
+  /*-----------------------Desktop Media Query------------------------*/
+  @media only screen and (min-width: 960px)  {
+  
+  .container1 { /*for later*/
+    grid-template-columns:auto 1fr;
+    grid-template-areas:
+      "header header"
+      "nav main"
+      "footer footer";
+      }
+
+  .container2 { /*for index.html*/
+        display: grid;
+          grid-template-columns:auto;
+          grid-gap:.5em;
+          margin:1%;
+          grid-template-areas:
+               "header header"
+               "nav nav"
+               "main main"
+               "footer footer";
+        padding-right: 2cm;
+        padding-left: 2cm;
+      }  
+      .container3 { /*for blog.html*/
+        display: grid;
+          grid-template-columns:auto 1fr 1.5fr;
+          grid-gap:.5em;
+          margin:1%;
+          grid-template-areas:
+               "header header header"
+               "nav main top"
+               "nav main middle"
+               "nav main bottom"
+               "footer footer footer";
+      }  
+  }
+
+  
