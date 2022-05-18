@@ -135,11 +135,7 @@ li {
   grid-area:fifth;
 }
 
-#navwrapper {
-  display:grid;
-  grid-template-areas:
-  "first second third fourth fifth sixth";
-  }
+
 main {
     grid-area:main;
     background:#A4C4FE;
@@ -190,6 +186,16 @@ footer p {
       "footer";
       }
 
+#navwrapper {
+  display:grid;
+  grid-template-areas:
+  "first"
+  "second"
+  "third" 
+  "fourth" 
+  "fifth" 
+  "sixth";
+  }
 .container2 { /*for index.html*/
   display: grid;
   grid-template-columns:auto;
@@ -254,6 +260,12 @@ footer p {
           "nav main"
           "footer footer";
           }
+
+    #navwrapper {
+  display:grid;
+  grid-template-areas:
+  "first second third fourth fifth sixth";
+  }
   
     .container2 { /*for index.html*/
       display: grid;
